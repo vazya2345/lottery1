@@ -34,7 +34,15 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 
 
-<div id="result">Ваш выигрыш: <?=$ticket->result?></div>
+<?php
+if($ticket->result=='You loose'){
+    echo '<div id="result">Ваш выигрыш: <span class="loose">'.$ticket->result.'</span></div>';
+}
+else{
+    echo '<div id="result">Ваш выигрыш: <span class="win">'.$ticket->result.'</span></div>';
+}
+?>
+
 </div>
 
 
@@ -55,6 +63,17 @@ $this->params['breadcrumbs'][] = $this->title;
     #result{
         display: none;
     }
+    #result span{
+        font-size: 30px;
+    }
+    #result .loose{
+        color: red;
+    }
+    #result .win{
+        color: green;
+    }
+
+
 </style>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -63,6 +82,13 @@ $(function(){
     $(".lot_elem").on("click", function(){
         $(this).children().show();
         $(this).removeClass('hid1');
+        if($(this).children().html()=='<?=$ticket->result?>'){
+            $(this).addClass('winclass');    
+        }
+        else{
+            $(this).addClass('looseclass');   
+        }
+        
         if($('.hid1').length==0){
             Result();
         }
@@ -70,5 +96,8 @@ $(function(){
 });
 function Result(){
     $('#result').show();
+    $('.looseclass').css('background-color', 'red');
+    $('.winclass').css('background-color', 'green');
+
 }
 </script>
