@@ -17,19 +17,19 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="lottery_body">
     <div class="row myrow">
-        <div class="col-lg-4 lot_elem hid1"><span><?= $ticket->val1 ?></span></div>
-        <div class="col-lg-4 lot_elem hid1"><span><?= $ticket->val2 ?></span></div>
-        <div class="col-lg-4 lot_elem hid1"><span><?= $ticket->val3 ?></span></div>    
+        <div class="col-lg-4 col-xs-4 lot_elem hid1"><span><?= $ticket->val1 ?></span></div>
+        <div class="col-lg-4 col-xs-4 lot_elem hid1"><span><?= $ticket->val2 ?></span></div>
+        <div class="col-lg-4 col-xs-4 lot_elem hid1"><span><?= $ticket->val3 ?></span></div>    
     </div>
     <div class="row myrow">
-        <div class="col-lg-4 lot_elem hid1"><span><?= $ticket->val4 ?></span></div>
-        <div class="col-lg-4 lot_elem hid1"><span><?= $ticket->val5 ?></span></div>
-        <div class="col-lg-4 lot_elem hid1"><span><?= $ticket->val6 ?></span></div>
+        <div class="col-lg-4 col-xs-4 lot_elem hid1"><span><?= $ticket->val4 ?></span></div>
+        <div class="col-lg-4 col-xs-4 lot_elem hid1"><span><?= $ticket->val5 ?></span></div>
+        <div class="col-lg-4 col-xs-4 lot_elem hid1"><span><?= $ticket->val6 ?></span></div>
     </div>
     <div class="row myrow">
-        <div class="col-lg-4 lot_elem hid1"><span><?= $ticket->val7 ?></span></div>
-        <div class="col-lg-4 lot_elem hid1"><span><?= $ticket->val8 ?></span></div>
-        <div class="col-lg-4 lot_elem hid1"><span><?= $ticket->val9 ?></span></div>
+        <div class="col-lg-4 col-xs-4 lot_elem hid1"><span><?= $ticket->val7 ?></span></div>
+        <div class="col-lg-4 col-xs-4 lot_elem hid1"><span><?= $ticket->val8 ?></span></div>
+        <div class="col-lg-4 col-xs-4 lot_elem hid1"><span><?= $ticket->val9 ?></span></div>
     </div>
 </div>
 
@@ -73,7 +73,12 @@ else{
         color: green;
     }
 
+@media only screen and (max-width: 420px) {
+    .lot_elem{
+        margin: 10px;
+    }
 
+}
 </style>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

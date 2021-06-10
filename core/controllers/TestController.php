@@ -29,6 +29,7 @@ abstract class TestController extends Controller
 
 	public function actionGenerate($lottery)
 	{
+		die;
 		Yii::$app->response->format = "html";
 		// echo 1;die;
 		$available_values = ['5000','10000','15000','20000','25000','40000','75000','500000'];
@@ -56,7 +57,8 @@ abstract class TestController extends Controller
 					continue;
 				}
 				else{
-					var_dump($model->errors);die;
+					var_dump($model->errors);
+					$i--;
 				}
 			}
 		}
@@ -84,7 +86,8 @@ abstract class TestController extends Controller
 					continue;
 				}
 				else{
-					var_dump($model->errors);die;
+					var_dump($model->errors);
+					$i--;
 				}
 		}
 
